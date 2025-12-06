@@ -1,52 +1,17 @@
 === TEXTO 1 ===
 
 Frase inicial: 
-banana banana
+Eu te AMO BÁRBARA BARBARA eu EU
 
 Estrutura da Árvore: 
-L(banana)
+N L(eu) N N L(te) L(amo) N L(barbara) L(bárbara)
 
 Códigos de Huffman:
-banana : 0
+eu : 0
+te : 100
+amo : 101
+barbara : 110
+bárbara : 111
 
 Texto Comprimido: 
-00
-
-=== TEXTO 2 ===
-
-Frase inicial: 
-o rato roeu a roupa do rei de roma
-
-Estrutura da Árvore: 
-N N N L(rato) L(roupa) N L(rei) L(roma) N N L(de) L(do) N L(a) N L(o) L(roeu)
-
-Códigos de Huffman:
-rato : 000
-roupa : 001
-rei : 010
-roma : 011
-de : 100
-do : 101
-a : 110
-o : 1110
-roeu : 1111
-
-Texto Comprimido: 
-11100001111110001101010100011
-
-=== TEXTO 3 ===
-
-Frase inicial: 
-eu te amo barbara
-
-Estrutura da Árvore: 
-N N L(eu) L(amo) N L(te) L(barbara)
-
-Códigos de Huffman:
-eu : 00
-amo : 01
-te : 10
-barbara : 11
-
-Texto Comprimido: 
-00100111
+010010111111000

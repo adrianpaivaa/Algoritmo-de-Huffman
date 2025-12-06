@@ -1,7 +1,7 @@
 import heapq
 import re
 
-#   Classe Nó da Árvore de Huffman
+# Classe Nó da Árvore de Huffman
 class Node:
     def __init__(self, freq=0, palavra=None, esq=None, dir=None):
         self.palavra = palavra
@@ -13,16 +13,16 @@ class Node:
         return self.freq < other.freq
 
 
-#   Função para contar a frequência das palavras
+# Função para contar a frequência das palavras
 def contar_frequencia(texto):
-    palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto.lower())
-    freq = {}
+    palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto.lower()) # Converte para minúsculas, optei por não normalizar acentos para evitar ambiguidades
+    freq = {}                                             
     for p in palavras:
         freq[p] = freq.get(p, 0) + 1
     return freq
 
 
-#   Função para criar a àrvore
+# Função para criar a àrvore
 def criar_arvore(freq_map):
     heap = []
 
@@ -46,7 +46,7 @@ def criar_arvore(freq_map):
     return heap[0] if heap else None
 
 
-#   Gera código de Huffman para cada palavra
+# Gera código de Huffman para cada palavra
 def gerar_codigos(node, prefixo="", tabela=None):
     if tabela is None:
         tabela = {}
@@ -67,14 +67,14 @@ def gerar_codigos(node, prefixo="", tabela=None):
 
     return tabela
 
-#   Comprime o texto 
+# Comprime o texto 
 def comprimir(texto, codigos):
     palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto.lower())
     bits = "".join(codigos[p] for p in palavras)
     return bits
 
 
-#   Imprime árvore em forma de texto
+# Imprime árvore em forma de texto
 def serializar_arvore(node, lista=None):
     if lista is None:
         lista = []
