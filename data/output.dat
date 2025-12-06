@@ -3,8 +3,33 @@
 Frase inicial: 
 O computador executa instruções em alta velocidade e processa dados com precisão.
 
-Estrutura da Árvore: 
+Árvore textual: 
 N N N L(dados) L(processa) N L(com) L(alta) N N N L(e) L(instruções) N L(computador) L(em) N N L(o) L(executa) N L(velocidade) L(precisão)
+
+Árvore visual: 
+Raiz -> * (12)
+    L -> * (4)
+        L -> * (2)
+            L -> dados (1)
+            R -> processa (1)
+        R -> * (2)
+            L -> com (1)
+            R -> alta (1)
+    R -> * (8)
+        L -> * (4)
+            L -> * (2)
+                L -> e (1)
+                R -> instruções (1)
+            R -> * (2)
+                L -> computador (1)
+                R -> em (1)
+        R -> * (4)
+            L -> * (2)
+                L -> o (1)
+                R -> executa (1)
+            R -> * (2)
+                L -> velocidade (1)
+                R -> precisão (1)
 
 Códigos de Huffman:
 dados : 000
@@ -28,8 +53,29 @@ Texto Comprimido:
 Frase inicial: 
 A memória armazena informações que são acessadas rapidamente pela CPU.
 
-Estrutura da Árvore: 
+Árvore textual: 
 N N N L(que) L(informações) N L(a) L(armazena) N N L(pela) L(são) N N L(acessadas) L(cpu) N L(rapidamente) L(memória)
+
+Árvore visual: 
+Raiz -> * (10)
+    L -> * (4)
+        L -> * (2)
+            L -> que (1)
+            R -> informações (1)
+        R -> * (2)
+            L -> a (1)
+            R -> armazena (1)
+    R -> * (6)
+        L -> * (2)
+            L -> pela (1)
+            R -> são (1)
+        R -> * (4)
+            L -> * (2)
+                L -> acessadas (1)
+                R -> cpu (1)
+            R -> * (2)
+                L -> rapidamente (1)
+                R -> memória (1)
 
 Códigos de Huffman:
 que : 000
@@ -51,8 +97,31 @@ Texto Comprimido:
 Frase inicial: 
 Os sistemas operacionais controlam os recursos e coordenam as tarefas do processador.
 
-Estrutura da Árvore: 
+Árvore textual: 
 N N N L(do) L(e) L(os) N N N L(recursos) L(as) N L(tarefas) L(controlam) N N L(sistemas) L(operacionais) N L(coordenam) L(processador)
+
+Árvore visual: 
+Raiz -> * (12)
+    L -> * (4)
+        L -> * (2)
+            L -> do (1)
+            R -> e (1)
+        R -> os (2)
+    R -> * (8)
+        L -> * (4)
+            L -> * (2)
+                L -> recursos (1)
+                R -> as (1)
+            R -> * (2)
+                L -> tarefas (1)
+                R -> controlam (1)
+        R -> * (4)
+            L -> * (2)
+                L -> sistemas (1)
+                R -> operacionais (1)
+            R -> * (2)
+                L -> coordenam (1)
+                R -> processador (1)
 
 Códigos de Huffman:
 do : 000

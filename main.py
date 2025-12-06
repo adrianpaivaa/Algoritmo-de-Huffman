@@ -88,6 +88,30 @@ def serializar_arvore(node, lista=None):
 
     return " ".join(lista)
 
+def imprimir_arvore_LR(node, prefixo="", lado="Raiz", linhas=None):
+    if linhas is None:
+        linhas = []
+
+    if node is None:
+        return linhas
+
+    # Mostra a palavra se for uma folha
+    if node.palavra is not None:
+        linhas.append(f"{prefixo}{lado} -> {node.palavra} ({node.freq})")
+    else:
+        linhas.append(f"{prefixo}{lado} -> * ({node.freq})")
+
+    novo_prefixo = prefixo + "    "
+
+    # Esquerda (0) depois direita (1)
+    if node.esq:
+        imprimir_arvore_LR(node.esq, novo_prefixo, "L", linhas)
+    if node.dir:
+        imprimir_arvore_LR(node.dir, novo_prefixo, "R", linhas)
+
+    return linhas
+
+
 def processar():
     with open("data/input.dat", "r", encoding="utf-8") as f:
         conteudo = f.read().strip()
@@ -101,13 +125,16 @@ def processar():
         codigos = gerar_codigos(arvore)
         comprimido = comprimir(texto, codigos)
         arvore_serializada = serializar_arvore(arvore)
+        arvore_visual = imprimir_arvore_LR(arvore)
 
         bloco = []
         bloco.append(f"=== TEXTO {i} ===")
         bloco.append("\nFrase inicial: ")
         bloco.append(texto)
-        bloco.append("\nEstrutura da Árvore: ")
+        bloco.append("\nÁrvore textual: ")
         bloco.append(arvore_serializada)
+        bloco.append("\nÁrvore visual: ")
+        bloco.extend(arvore_visual)
 
         bloco.append("\nCódigos de Huffman:")
         for palavra, codigo in codigos.items():
