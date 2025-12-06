@@ -1,0 +1,71 @@
+=== TEXTO 1 ===
+
+Frase inicial: 
+O computador executa instruções em alta velocidade e processa dados com precisão.
+
+Estrutura da Árvore: 
+N N N L(dados) L(processa) N L(com) L(alta) N N N L(e) L(instruções) N L(computador) L(em) N N L(o) L(executa) N L(velocidade) L(precisão)
+
+Códigos de Huffman:
+dados : 000
+processa : 001
+com : 010
+alta : 011
+e : 1000
+instruções : 1001
+computador : 1010
+em : 1011
+o : 1100
+executa : 1101
+velocidade : 1110
+precisão : 1111
+
+Texto Comprimido: 
+11001010110110011011011111010000010000101111
+
+=== TEXTO 2 ===
+
+Frase inicial: 
+A memória armazena informações que são acessadas rapidamente pela CPU.
+
+Estrutura da Árvore: 
+N N N L(que) L(informações) N L(a) L(armazena) N N L(pela) L(são) N N L(acessadas) L(cpu) N L(rapidamente) L(memória)
+
+Códigos de Huffman:
+que : 000
+informações : 001
+a : 010
+armazena : 011
+pela : 100
+são : 101
+acessadas : 1100
+cpu : 1101
+rapidamente : 1110
+memória : 1111
+
+Texto Comprimido: 
+0101111011001000101110011101001101
+
+=== TEXTO 3 ===
+
+Frase inicial: 
+Os sistemas operacionais controlam os recursos e coordenam as tarefas do processador.
+
+Estrutura da Árvore: 
+N N N L(do) L(e) L(os) N N N L(recursos) L(as) N L(tarefas) L(controlam) N N L(sistemas) L(operacionais) N L(coordenam) L(processador)
+
+Códigos de Huffman:
+do : 000
+e : 001
+os : 01
+recursos : 1000
+as : 1001
+tarefas : 1010
+controlam : 1011
+sistemas : 1100
+operacionais : 1101
+coordenam : 1110
+processador : 1111
+
+Texto Comprimido: 
+011100110110110110000011110100110100001111

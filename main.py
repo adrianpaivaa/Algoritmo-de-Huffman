@@ -118,7 +118,7 @@ def processar():
 
         saida.append("\n".join(bloco))
 
-    with open("output.dat", "w", encoding="utf-8") as f:
+    with open("data/output.dat", "w", encoding="utf-8") as f:
         f.write("\n\n".join(saida))
 
     print("Arquivo output.dat gerado.")
