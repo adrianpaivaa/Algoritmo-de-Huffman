@@ -15,12 +15,15 @@ class Node:
 
 # Função para contar a frequência das palavras
 def contar_frequencia(texto):
-    palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto.lower()) # Converte para minúsculas, optei por não normalizar acentos para evitar ambiguidades
-    freq = {}                                             
-    for p in palavras:
-        freq[p] = freq.get(p, 0) + 1
-    return freq
-
+    texto_min = texto.lower()  # Separa em duas linhas
+    palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto_min)
+    contador = {}  # Nome diferente de 'freq'
+    for palavra in palavras:  # Nome mais descritivo
+        if palavra in contador:
+            contador[palavra] += 1
+        else:
+            contador[palavra] = 1
+    return contador
 
 # Função para criar a àrvore
 def criar_arvore(freq_map):
@@ -32,9 +35,10 @@ def criar_arvore(freq_map):
 
     # Constrói a árvore
     while len(heap) > 1:
+        #Seleciona os dois com menor frequência
         primeiro = heapq.heappop(heap)
         segundo = heapq.heappop(heap)
-
+        
         novo = Node(
             freq=primeiro.freq + segundo.freq,
             esq=primeiro,
@@ -53,7 +57,7 @@ def gerar_codigos(node, prefixo="", tabela=None):
 
     # Nó folha
     if node.palavra is not None:
-        # Retorna "0" se for uma única palavra
+        # Se for só uma palavra na árvore, usa"0" como código
         tabela[node.palavra] = prefixo if prefixo != "" else "0"
         return tabela
 
@@ -70,7 +74,10 @@ def gerar_codigos(node, prefixo="", tabela=None):
 # Comprime o texto 
 def comprimir(texto, codigos):
     palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto.lower())
-    bits = "".join(codigos[p] for p in palavras)
+    bits = []
+    for p in palavras:
+        bits.append(codigos[p])
+    bits = "".join(bits)
     return bits
 
 
