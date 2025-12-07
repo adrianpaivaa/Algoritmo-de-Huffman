@@ -30,7 +30,7 @@ Os sistemas operacionais controlam os recursos e coordenam as tarefas do process
 ```
 
 ## 3. Como executar
-Certifique-se de ter Python 3 instalado. No terminal execute:
+Certifique-se de ter Python 3 instalado. No terminal, execute:
 ```
 python main.py
 ```
