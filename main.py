@@ -15,10 +15,10 @@ class Node:
 
 # Função para contar a frequência das palavras
 def contar_frequencia(texto):
-    texto_min = texto.lower()  # Separa em duas linhas
+    texto_min = texto.lower()
     palavras = re.findall(r"[a-zA-ZÀ-ÿ]+", texto_min)
-    contador = {}  # Nome diferente de 'freq'
-    for palavra in palavras:  # Nome mais descritivo
+    contador = {} 
+    for palavra in palavras:
         if palavra in contador:
             contador[palavra] += 1
         else:
@@ -57,7 +57,7 @@ def gerar_codigos(node, prefixo="", tabela=None):
 
     # Nó folha
     if node.palavra is not None:
-        # Se for só uma palavra na árvore, usa"0" como código
+        # Se for só uma palavra na árvore, usa "0" como código
         tabela[node.palavra] = prefixo if prefixo != "" else "0"
         return tabela
 
